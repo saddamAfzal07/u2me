@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:u2me/constants/colors/colors.dart';
+import 'package:u2me/pages/settings/onclick/chat/chat_screen.dart';
 import 'package:u2me/pages/settings/onclick/data_policy_screen.dart';
 import 'package:u2me/pages/settings/onclick/payment_method/payment_method.dart';
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: AppColor.primary,
       ),
-      home: const PaymentMethodScreen(),
+      home: ChatPage(),
     );
   }
 }
