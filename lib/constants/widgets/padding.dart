@@ -15,3 +15,4 @@ const padding72 = SizedBox(width: 72, height: 72);
 const padding80 = SizedBox(width: 80, height: 80);
 const padding100 = SizedBox(width: 100, height: 100);
 const padding120 = SizedBox(width: 120, height: 120);
+const padding140 = SizedBox(width: 140, height: 140);

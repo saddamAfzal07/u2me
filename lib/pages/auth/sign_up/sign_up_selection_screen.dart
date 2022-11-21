@@ -3,6 +3,7 @@ import 'package:u2me/constants/colors/colors.dart';
 
 import 'package:u2me/constants/widgets/image.dart';
 import 'package:u2me/constants/widgets/select_signup_item.dart';
+import 'package:u2me/pages/auth/sign_up/sign_up_screen.dart';
 import 'package:u2me/pages/auth/widget/term_policy_text.dart';
 
 import '../../../constants/widgets/padding.dart';
@@ -36,8 +37,13 @@ class SignUpSelectionScreen extends StatelessWidget {
               ),
               SelectSignUpItem(
                 image: "assets/images/email.png",
-                title: "Sign up with Facebook",
-                onTap: () {},
+                title: "Sign up with Email",
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignUpScreen()));
+                },
               ),
               const Spacer(),
               const TermAndPolicy(),

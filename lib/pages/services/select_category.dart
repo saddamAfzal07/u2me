@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:u2me/constants/colors/colors.dart';
 import 'package:u2me/constants/widgets/button_item.dart';
 import 'package:u2me/constants/widgets/padding.dart';
+import 'package:u2me/pages/services/place_order.dart';
 
 class SelectCategory extends StatelessWidget {
   SelectCategory({Key? key}) : super(key: key);
@@ -69,22 +70,31 @@ class SelectCategory extends StatelessWidget {
                     child: Row(
                       children: [
                         Expanded(
-                          child: Container(
-                            alignment: Alignment.centerLeft,
-                            color: followServicesitems[index].selection ==
-                                    "Selected"
-                                ? AppColor.primary
-                                : AppColor.greyBackgroun,
-                            height: 40,
-                            child: Padding(
-                              padding: const EdgeInsets.only(
-                                left: 10,
-                              ),
-                              child: Text(
-                                followServicesitems[index].text.toString(),
-                                textAlign: TextAlign.center,
-                                style: const TextStyle(
-                                    fontSize: 15, color: AppColor.white),
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const PlaceOrderScreen()));
+                            },
+                            child: Container(
+                              alignment: Alignment.centerLeft,
+                              color: followServicesitems[index].selection ==
+                                      "Selected"
+                                  ? AppColor.primary
+                                  : AppColor.greyBackgroun,
+                              height: 40,
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                  left: 10,
+                                ),
+                                child: Text(
+                                  followServicesitems[index].text.toString(),
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                      fontSize: 15, color: AppColor.white),
+                                ),
                               ),
                             ),
                           ),

@@ -15,7 +15,7 @@ class TermAndPolicy extends StatelessWidget {
         textAlign: TextAlign.center,
         style: TextStyle(
           color: AppColor.white,
-          fontSize: 12,
+          fontSize: 10,
         ),
       ),
     );

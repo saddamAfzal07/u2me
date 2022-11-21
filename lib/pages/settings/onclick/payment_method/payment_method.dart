@@ -73,7 +73,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                               borderRadius: BorderRadius.circular(4.0),
                             ),
                             height: 140,
-                            width: 160,
+                            width: 130,
                             child: Column(
                               children: [
                                 padding16,
@@ -161,7 +161,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                               borderRadius: BorderRadius.circular(4.0),
                             ),
                             height: 140,
-                            width: 160,
+                            width: 130,
                             child: Column(
                               children: [
                                 padding16,

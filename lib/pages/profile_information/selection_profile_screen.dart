@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:u2me/constants/colors/colors.dart';
 import 'package:u2me/constants/widgets/button_item.dart';
 import 'package:u2me/constants/widgets/padding.dart';
+import 'package:u2me/pages/services/follow_services.dart';
+import 'package:u2me/pages/services/select_category.dart';
 
 class SelectionProfile extends StatelessWidget {
   const SelectionProfile({Key? key}) : super(key: key);
@@ -47,7 +49,12 @@ class SelectionProfile extends StatelessWidget {
                     ),
                     padding120,
                     ButtonItem(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => FollowServices()));
+                      },
                       text: "looking for a service",
                     ),
                     padding4,

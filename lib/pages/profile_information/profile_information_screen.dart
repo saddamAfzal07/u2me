@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:u2me/constants/colors/colors.dart';
 import 'package:u2me/constants/widgets/button_item.dart';
 import 'package:u2me/constants/widgets/padding.dart';
+import 'package:u2me/pages/profile_information/selection_profile_screen.dart';
 
 class ProfileInfoScreen extends StatefulWidget {
   const ProfileInfoScreen({Key? key}) : super(key: key);
@@ -54,7 +55,7 @@ class _ProfileInfoScreenState extends State<ProfileInfoScreen> {
                     children: [
                       padding72,
                       const Text(
-                        "profile information",
+                        "PROFILE INFORMATION",
                         style: TextStyle(
                           fontSize: 15.0,
                           color: AppColor.white,
@@ -209,7 +210,13 @@ class _ProfileInfoScreenState extends State<ProfileInfoScreen> {
                           alignment: Alignment.bottomCenter,
                           child: ButtonItem(
                             text: "Continue",
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const SelectionProfile()));
+                            },
                           ),
                         ),
                       ),

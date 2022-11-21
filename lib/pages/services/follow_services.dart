@@ -2,47 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:u2me/constants/colors/colors.dart';
 import 'package:u2me/constants/widgets/button_item.dart';
 import 'package:u2me/constants/widgets/padding.dart';
+import 'package:u2me/pages/services/select_category/home_page_category_screen.dart';
 
 class FollowServices extends StatelessWidget {
-  final List followServicesitems = [
-    "Appliance Services",
-    "Asphalt/Paving",
-    "Assembly Services",
-    "Attic Insulation",
-    "Bath Tub Installation and Finishing",
-    "BBQ Services",
-    "Appliance Services",
-    "Asphalt/Paving",
-    "Assembly Services",
-    "Attic Insulation",
-    "Bath Tub Installation and Finishing",
-    "BBQ Services",
-    "Appliance Services",
-    "Asphalt/Paving",
-    "Assembly Services",
-    "Attic Insulation",
-    "Bath Tub Installation and Finishing",
-    "BBQ Services",
-    "Appliance Services",
-    "Asphalt/Paving",
-    "Assembly Services",
-    "Attic Insulation",
-    "Bath Tub Installation and Finishing",
-    "BBQ Services",
-    "Appliance Services",
-    "Asphalt/Paving",
-    "Assembly Services",
-    "Attic Insulation",
-    "Bath Tub Installation and Finishing",
-    "BBQ Services",
-    "Appliance Services",
-    "Asphalt/Paving",
-    "Assembly Services",
-    "Attic Insulation",
-    "Bath Tub Installation and Finishing",
-    "BBQ Services",
-  ];
-
   FollowServices({Key? key}) : super(key: key);
 
   @override
@@ -94,7 +56,7 @@ class FollowServices extends StatelessWidget {
                 shrinkWrap: true,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  childAspectRatio: 16 / 4,
+                  childAspectRatio: 13 / 4,
                 ),
                 itemCount: followServicesitems.length,
                 itemBuilder: (context, index) {
@@ -103,13 +65,15 @@ class FollowServices extends StatelessWidget {
                       padding: const EdgeInsets.only(
                           bottom: 4, right: 1.5, left: 1.5),
                       child: Container(
-                        color: AppColor.primary,
+                        color: followServicesitems[index].value
+                            ? AppColor.primary
+                            : AppColor.greyBackgroun,
                         alignment: Alignment.center,
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 4, vertical: 2),
                           child: Text(
-                            followServicesitems[index],
+                            followServicesitems[index].title,
                             textAlign: TextAlign.center,
                             style: const TextStyle(
                                 fontSize: 15, color: AppColor.white),
@@ -125,7 +89,12 @@ class FollowServices extends StatelessWidget {
                 alignment: Alignment.bottomCenter,
                 child: ButtonItem(
                   text: "Continue",
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => CategoryHomepage()));
+                  },
                 ),
               ),
               padding16,
@@ -136,3 +105,140 @@ class FollowServices extends StatelessWidget {
     );
   }
 }
+
+class Service {
+  String title;
+  bool value;
+  Service({required this.title, required this.value});
+}
+
+final List<Service> followServicesitems = [
+  Service(
+    title: "Appliance Services",
+    value: true,
+  ),
+  Service(
+    title: "Asphalt/Paving",
+    value: false,
+  ),
+  Service(
+    title: "Asphalt/Paving",
+    value: false,
+  ),
+  Service(
+    title: "Asphalt/Paving",
+    value: false,
+  ),
+  Service(
+    title: "Attic Insulation",
+    value: false,
+  ),
+  Service(
+    title: "Attic Insulation",
+    value: false,
+  ),
+  Service(
+    title: "Asphalt/Paving",
+    value: true,
+  ),
+  Service(
+    title: "Bath Tub Installation and Finishing",
+    value: true,
+  ),
+  Service(
+    title: "Appliance Services",
+    value: true,
+  ),
+  Service(
+    title: "Asphalt/Paving",
+    value: false,
+  ),
+  Service(
+    title: "Asphalt/Paving",
+    value: false,
+  ),
+  Service(
+    title: "Asphalt/Paving",
+    value: false,
+  ),
+  Service(
+    title: "Attic Insulation",
+    value: false,
+  ),
+  Service(
+    title: "Attic Insulation",
+    value: false,
+  ),
+  Service(
+    title: "Asphalt/Paving",
+    value: true,
+  ),
+  Service(
+    title: "Bath Tub Installation and Finishing",
+    value: true,
+  ),
+  Service(
+    title: "Appliance Services",
+    value: true,
+  ),
+  Service(
+    title: "Asphalt/Paving",
+    value: false,
+  ),
+  Service(
+    title: "Asphalt/Paving",
+    value: false,
+  ),
+  Service(
+    title: "Asphalt/Paving",
+    value: false,
+  ),
+  Service(
+    title: "Attic Insulation",
+    value: false,
+  ),
+  Service(
+    title: "Attic Insulation",
+    value: false,
+  ),
+  Service(
+    title: "Asphalt/Paving",
+    value: true,
+  ),
+  Service(
+    title: "Bath Tub Installation and Finishing",
+    value: true,
+  ),
+  Service(
+    title: "Appliance Services",
+    value: true,
+  ),
+  Service(
+    title: "Asphalt/Paving",
+    value: false,
+  ),
+  Service(
+    title: "Asphalt/Paving",
+    value: false,
+  ),
+  Service(
+    title: "Asphalt/Paving",
+    value: false,
+  ),
+  Service(
+    title: "Attic Insulation",
+    value: false,
+  ),
+  Service(
+    title: "Attic Insulation",
+    value: false,
+  ),
+  Service(
+    title: "Asphalt/Paving",
+    value: true,
+  ),
+  Service(
+    title: "Bath Tub Installation and Finishing",
+    value: true,
+  ),
+];

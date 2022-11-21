@@ -3,6 +3,8 @@ import 'package:u2me/constants/colors/colors.dart';
 import 'package:u2me/constants/widgets/button_item.dart';
 import 'package:u2me/constants/widgets/image.dart';
 import 'package:u2me/constants/widgets/padding.dart';
+import 'package:u2me/pages/auth/sign_in/sign_in_screen.dart';
+import 'package:u2me/pages/auth/sign_up/sign_up_selection_screen.dart';
 import 'package:u2me/pages/auth/widget/forget_password.dart';
 import 'package:u2me/pages/auth/widget/term_policy_text.dart';
 
@@ -22,14 +24,24 @@ class WelcomeAuth extends StatelessWidget {
             children: [
               padding100,
               const ImageItem(),
-              padding100,
+              padding140,
               ButtonItem(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignInScreen()));
+                },
                 text: "SIGN IN",
               ),
               padding4,
               ButtonItem(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignUpSelectionScreen()));
+                },
                 text: "SIGN UP",
               ),
               const Spacer(),

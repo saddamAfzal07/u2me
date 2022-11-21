@@ -28,13 +28,12 @@ class _ChatPageState extends State<ChatPage> {
           ),
         ),
       ),
-      // backgroundColor: Colors.indigo,
       body: SafeArea(
         child: Stack(
           children: [
             Column(
               children: [
-                // _topChat(),
+                _topChat(),
                 _bodyChat(),
                 // SizedBox(
                 //   height: 100,
@@ -49,62 +48,35 @@ class _ChatPageState extends State<ChatPage> {
   }
 
   _topChat() {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 25),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            children: [
-              GestureDetector(
-                onTap: () => Navigator.of(context).pop(),
-                child: const Icon(
-                  Icons.arrow_back_ios,
-                  size: 25,
-                  color: Colors.white,
-                ),
-              ),
-              const Text(
-                'Fiona',
-                style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white),
-              ),
-            ],
+    return ListTile(
+      contentPadding: const EdgeInsets.all(0),
+      horizontalTitleGap: 6,
+      // dense: true,
+      // visualDensity: const VisualDensity(vertical: -1),
+      leading: Image.asset(
+        "assets/images/pic1.png",
+        width: 70,
+        height: 50,
+      ),
+      title: const Text("Ugradnja parketa"),
+      // subtitle: const Text("Ugradnja parketa"),
+      tileColor: Colors.grey.shade300,
+      trailing: Container(
+        margin: const EdgeInsets.only(right: 6),
+        height: 30,
+        width: 130,
+        decoration: const BoxDecoration(
+          color: Colors.green,
+        ),
+        child: const Center(
+          child: Text(
+            "APPLIED FOR THE JOB",
+            style: TextStyle(
+                color: AppColor.white,
+                fontSize: 11,
+                fontWeight: FontWeight.bold),
           ),
-          Row(
-            children: [
-              Container(
-                padding: EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  color: Colors.black12,
-                ),
-                child: const Icon(
-                  Icons.call,
-                  size: 25,
-                  color: Colors.white,
-                ),
-              ),
-              const SizedBox(
-                width: 20,
-              ),
-              Container(
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  color: Colors.black12,
-                ),
-                child: const Icon(
-                  Icons.videocam,
-                  size: 25,
-                  color: Colors.white,
-                ),
-              ),
-            ],
-          )
-        ],
+        ),
       ),
     );
   }
@@ -112,7 +84,7 @@ class _ChatPageState extends State<ChatPage> {
   Widget _bodyChat() {
     return Expanded(
       child: Container(
-        padding: const EdgeInsets.only(left: 25, right: 25, top: 25),
+        padding: const EdgeInsets.only(left: 10, right: 10, top: 25),
         width: double.infinity,
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
