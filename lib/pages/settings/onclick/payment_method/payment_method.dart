@@ -52,7 +52,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                       "Payment package",
                       style: TextStyle(
                         fontSize: 15.0,
-                        color: AppColor.greyBackgroun,
+                        color: AppColor.greyBackground,
                       ),
                     ),
                     padding20,
@@ -68,7 +68,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                           child: Container(
                             decoration: BoxDecoration(
                               color: premiumSelected == true
-                                  ? AppColor.greyBackgroun
+                                  ? AppColor.greyBackground
                                   : AppColor.white,
                               borderRadius: BorderRadius.circular(4.0),
                             ),
@@ -157,7 +157,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                             decoration: BoxDecoration(
                               color: premiumSelected == true
                                   ? AppColor.white
-                                  : AppColor.greyBackgroun,
+                                  : AppColor.greyBackground,
                               borderRadius: BorderRadius.circular(4.0),
                             ),
                             height: 140,

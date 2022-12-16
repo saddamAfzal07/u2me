@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:u2me/constants/colors/colors.dart';
-import 'package:u2me/constants/widgets/button_item.dart';
 import 'package:u2me/constants/widgets/padding.dart';
 
-class PlaceOrderScreen extends StatefulWidget {
-  const PlaceOrderScreen({Key? key}) : super(key: key);
+class ServiceProviderDetails extends StatefulWidget {
+  const ServiceProviderDetails({Key? key}) : super(key: key);
 
   @override
-  State<PlaceOrderScreen> createState() => _PlaceOrderScreenState();
+  State<ServiceProviderDetails> createState() => _ServiceProviderDetailsState();
 }
 
-class _PlaceOrderScreenState extends State<PlaceOrderScreen> {
+class _ServiceProviderDetailsState extends State<ServiceProviderDetails> {
   TextEditingController firstName = TextEditingController();
 
   TextEditingController lastName = TextEditingController();

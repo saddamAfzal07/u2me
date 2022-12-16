@@ -43,7 +43,7 @@ class TermOfUseScreen extends StatelessWidget {
             ),
             child: SettingScreenWidget(
               title: "Browse the latest styles",
-              Description:
+              description:
                   "Browse the latest styles tap the heart to add items you love to your closet. Browse the latest styles, tap the heart to add items you love to your closet. Browse theu love to your closet. Browse the latest styles, tap the heart to add items you love to your closet. Browse the latest styles, tap the heart to add items you love to  your closet. Browse t heu love to your closet. Browse the latest styles, tap the heart to add items you love to your closet. Browse the latest styles, tap the heart to add items you love to your closet. Browse theu love to your closet. Browse the latest styles, tap the heart to add items you love to your closet. Browse the latest styles, tap the heart to add items you love to  your closet. Browse t heu love to your closet.",
             ),
           ),

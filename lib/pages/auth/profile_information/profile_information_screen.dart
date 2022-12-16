@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 import 'package:u2me/constants/colors/colors.dart';
 import 'package:u2me/constants/widgets/button_item.dart';
 import 'package:u2me/constants/widgets/padding.dart';
-import 'package:u2me/pages/profile_information/selection_profile_screen.dart';
+import 'package:u2me/pages/auth/profile_information/selection_role.dart';
 
 class ProfileInfoScreen extends StatefulWidget {
   const ProfileInfoScreen({Key? key}) : super(key: key);
@@ -13,7 +14,6 @@ class ProfileInfoScreen extends StatefulWidget {
 
 class _ProfileInfoScreenState extends State<ProfileInfoScreen> {
   TextEditingController firstName = TextEditingController();
-
   TextEditingController lastName = TextEditingController();
   TextEditingController city = TextEditingController();
   TextEditingController postalCode = TextEditingController();
@@ -63,7 +63,10 @@ class _ProfileInfoScreenState extends State<ProfileInfoScreen> {
                       ),
                       padding72,
                       TextFormField(
+                        style: const TextStyle(color: Colors.white),
                         controller: firstName,
+                        validator:
+                            RequiredValidator(errorText: 'Name is required'),
                         cursorColor: AppColor.white,
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
@@ -92,6 +95,9 @@ class _ProfileInfoScreenState extends State<ProfileInfoScreen> {
                       ),
                       padding16,
                       TextFormField(
+                        style: const TextStyle(color: Colors.white),
+                        validator: RequiredValidator(
+                            errorText: 'Last Name is required'),
                         controller: lastName,
                         cursorColor: AppColor.white,
                         keyboardType: TextInputType.emailAddress,
@@ -121,7 +127,10 @@ class _ProfileInfoScreenState extends State<ProfileInfoScreen> {
                       ),
                       padding16,
                       TextFormField(
+                        style: const TextStyle(color: Colors.white),
                         controller: city,
+                        validator:
+                            RequiredValidator(errorText: 'City is required'),
                         cursorColor: AppColor.white,
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
@@ -150,12 +159,15 @@ class _ProfileInfoScreenState extends State<ProfileInfoScreen> {
                       ),
                       padding16,
                       TextFormField(
-                        controller: city,
+                        style: const TextStyle(color: Colors.white),
+                        validator: RequiredValidator(
+                            errorText: 'PostalCode is required'),
+                        controller: postalCode,
                         cursorColor: AppColor.white,
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
                           prefixIconConstraints:
-                              BoxConstraints(minWidth: 23, maxHeight: 20),
+                              const BoxConstraints(minWidth: 23, maxHeight: 20),
                           enabledBorder: const UnderlineInputBorder(
                             borderSide: BorderSide(color: AppColor.white),
                           ),
@@ -163,14 +175,14 @@ class _ProfileInfoScreenState extends State<ProfileInfoScreen> {
                             borderSide: BorderSide(color: AppColor.white),
                           ),
                           prefixIcon: Padding(
-                            padding: EdgeInsets.only(right: 10),
+                            padding: const EdgeInsets.only(right: 10),
                             child: Icon(
                               Icons.vpn_key,
                               color: Colors.grey.shade300,
                             ),
                           ),
                           hintText: "Postal Code",
-                          hintStyle: TextStyle(
+                          hintStyle: const TextStyle(
                             color: AppColor.white,
                             fontSize: 14,
                           ),
@@ -178,7 +190,10 @@ class _ProfileInfoScreenState extends State<ProfileInfoScreen> {
                       ),
                       padding16,
                       TextFormField(
-                        controller: city,
+                        style: const TextStyle(color: Colors.white),
+                        controller: province,
+                        validator: RequiredValidator(
+                            errorText: 'Province is required'),
                         cursorColor: AppColor.white,
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
@@ -205,17 +220,28 @@ class _ProfileInfoScreenState extends State<ProfileInfoScreen> {
                           ),
                         ),
                       ),
+                      padding10,
                       Expanded(
                         child: Align(
                           alignment: Alignment.bottomCenter,
                           child: ButtonItem(
                             text: "Continue",
                             onTap: () {
-                              Navigator.push(
+                              final isvalid = _formKey.currentState!.validate();
+                              if (isvalid) {
+                                Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                          const SelectionProfile()));
+                                    builder: (context) => SelectionProfile(
+                                      city: city.text,
+                                      lastName: lastName.text,
+                                      name: firstName.text,
+                                      postalCode: postalCode.text,
+                                      province: province.text,
+                                    ),
+                                  ),
+                                );
+                              }
                             },
                           ),
                         ),

@@ -9,7 +9,7 @@ import 'package:u2me/pages/services/select_category/my_jobs_screen.dart';
 import 'package:u2me/pages/services/select_category/profile_screen.dart';
 
 class CategoryHomepage extends StatefulWidget {
-  CategoryHomepage({super.key});
+  const CategoryHomepage({super.key});
 
   @override
   State<CategoryHomepage> createState() => _CategoryHomepageState();
@@ -17,7 +17,12 @@ class CategoryHomepage extends StatefulWidget {
 
 class _CategoryHomepageState extends State<CategoryHomepage> {
   int selecteditem = 0;
-  List page = [CategoryPage(), MapsScreen(), MyJobsScreen(), MyProfielScreen()];
+  List page = [
+    const CategoryPage(),
+    const MapsScreen(),
+    const MyJobsScreen(),
+    const MyProfielScreen(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -79,31 +84,6 @@ class _CategoryHomepageState extends State<CategoryHomepage> {
         ),
       ),
       backgroundColor: AppColor.background,
-      // appBar: AppBar(
-      //   centerTitle: true,
-      //   elevation: 0,
-      //   backgroundColor: AppColor.background,
-      //   actions: [
-      //     Image.asset(
-      //       "assets/images/drawer.png",
-      //       // width: 7,
-      //       // height: 12,
-      //     ),
-      //   ],
-      //   leading: Image.asset(
-      //     "assets/images/notification.png",
-      //     width: 7,
-      //     height: 12,
-      //   ),
-      //   title: const Text(
-      //     "Select category",
-      //     style: TextStyle(
-      //       fontSize: 15.0,
-      //       fontWeight: FontWeight.bold,
-      //       color: AppColor.white,
-      //     ),
-      //   ),
-      // ),
       body: page.elementAt(selecteditem),
     );
   }

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class QuestionText extends StatelessWidget {
-  const QuestionText(
-      {Key? key,
-      this.onTap,
-      required this.color,
-      required this.actionTitle,
-      required this.questionTitle})
-      : super(key: key);
+  const QuestionText({
+    Key? key,
+    this.onTap,
+    required this.color,
+    required this.actionTitle,
+    required this.questionTitle,
+  }) : super(key: key);
   final VoidCallback? onTap;
   final Color color;
   final String questionTitle;

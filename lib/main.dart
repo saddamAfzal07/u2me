@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:u2me/constants/colors/colors.dart';
-
 import 'package:u2me/pages/splash/splash_screen.dart';
+import 'package:u2me/service_provider_role/post_job.dart';
 
 void main() {
   runApp(const MyApp());

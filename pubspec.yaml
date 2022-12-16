@@ -35,7 +35,29 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   form_field_validator: ^1.1.0
+ 
+  google_maps_flutter: ^2.1.10
+  geocoding: ^2.0.4
+  geolocator: ^9.0.1
+  image_picker: ^0.8.3
+  date_time_picker: ^2.1.0
+  uuid: ^3.0.6
+  flutter_launcher_icons: "^0.11.0"
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logo.png"
+
+
+ 
+  dio: any
+
+
+  
+
   http: any
+  get: ^4.6.5
+  
 
 dev_dependencies:
   flutter_test:

@@ -4,9 +4,9 @@ import 'package:u2me/constants/widgets/padding.dart';
 
 class SettingScreenWidget extends StatelessWidget {
   String title;
-  String Description;
+  String description;
   SettingScreenWidget(
-      {Key? key, required this.title, required this.Description})
+      {Key? key, required this.title, required this.description})
       : super(key: key);
 
   @override
@@ -25,11 +25,11 @@ class SettingScreenWidget extends StatelessWidget {
         ),
         padding10,
         Text(
-          Description,
+          description,
           style: const TextStyle(
             fontSize: 15.0,
             fontWeight: FontWeight.bold,
-            color: AppColor.greyBackgroun,
+            color: AppColor.greyBackground,
           ),
         ),
         padding12,
@@ -43,11 +43,11 @@ class SettingScreenWidget extends StatelessWidget {
         ),
         padding10,
         Text(
-          Description,
+          description,
           style: const TextStyle(
             fontSize: 15.0,
             fontWeight: FontWeight.bold,
-            color: AppColor.greyBackgroun,
+            color: AppColor.greyBackground,
           ),
         ),
       ],

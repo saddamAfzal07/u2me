@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:u2me/constants/colors/colors.dart';
-import 'package:u2me/constants/widgets/button_item.dart';
 import 'package:u2me/constants/widgets/padding.dart';
-import 'package:u2me/pages/services/place_order.dart';
+import 'package:u2me/service_provider_role/post_job.dart';
 
 class SelectCategory extends StatelessWidget {
   SelectCategory({Key? key}) : super(key: key);
@@ -72,18 +71,18 @@ class SelectCategory extends StatelessWidget {
                         Expanded(
                           child: InkWell(
                             onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const PlaceOrderScreen()));
+                              // Navigator.push(
+                              //     context,
+                              //     MaterialPageRoute(
+                              //         builder: (context) =>
+                              //             const PlaceOrderScreen()));
                             },
                             child: Container(
                               alignment: Alignment.centerLeft,
                               color: followServicesitems[index].selection ==
                                       "Selected"
                                   ? AppColor.primary
-                                  : AppColor.greyBackgroun,
+                                  : AppColor.greyBackground,
                               height: 40,
                               child: Padding(
                                 padding: const EdgeInsets.only(
@@ -109,7 +108,7 @@ class SelectCategory extends StatelessWidget {
                           color:
                               followServicesitems[index].selection == "Selected"
                                   ? AppColor.primary
-                                  : AppColor.greyBackgroun,
+                                  : AppColor.greyBackground,
                           height: 40,
                           child: Text(
                             followServicesitems[index].selection.toString(),
